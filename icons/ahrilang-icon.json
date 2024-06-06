@@ -1,0 +1,13 @@
+{
+    "iconDefinitions": {
+        "ahrilang": {
+            "iconPath": "../images/logo.svg"
+        }
+    },
+    "fileExtensions": {
+        "a": "ahrilang",
+        "al": "ahrilang",
+        "ahri": "ahrilang",
+        "ahrilang": "ahrilang"
+    }
+}

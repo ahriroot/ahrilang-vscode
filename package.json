@@ -1,0 +1,44 @@
+{
+    "name": "ahrilang",
+    "displayName": "Ahrilang",
+    "description": "Ahrilang Support.",
+    "version": "0.1.0-alpha.0",
+    "engines": {
+        "vscode": "^1.89.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "ahrilang",
+                "aliases": [
+                    "ahrilang",
+                    "ahrilang"
+                ],
+                "extensions": [
+                    ".a",
+                    ".al",
+                    ".ahri",
+                    ".ahrilang"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ahrilang",
+                "scopeName": "source.a",
+                "path": "./syntaxes/ahrilang.tmLanguage.json"
+            }
+        ],
+        "iconThemes": [
+            {
+                "id": "ahrilang",
+                "label": "Icons for ahrilang.",
+                "path": "./icons/ahrilang-icon.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,143 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.ahrilangon",
+    "name": "ahrilang",
+    "scopeName": "source.a",
+    "fileTypes": [
+        ".a"
+    ],
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings1"
+        },
+        {
+            "include": "#strings2"
+        },
+        {
+            "include": "#strings3"
+        },
+        {
+            "include": "#comment"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.ahrilang",
+                    "match": "\\b(mod|pub|use|as|class|async|await|fn|return|if|else|for|while|loop|continue|break)\\b"
+                },
+                {
+                    "name": "support.type.builtin.ahrilang",
+                    "match": "\\b(print)\\b"
+                },
+                {
+                    "name": "constant.language.boolean.ahrilang",
+                    "match": "\\b(true|false)\\b"
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "name": "comment.block.documentation.ahrilang",
+                    "begin": "/\\*\\*(?!/)",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.ahrilang"
+                        }
+                    },
+                    "end": "\\*/",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.ahrilang"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#docblock"
+                        }
+                    ]
+                },
+                {
+                    "name": "comment.block.ahrilang",
+                    "begin": "(/\\*)(?:\\s*((@)internal)(?=\\s|(\\*/)))?",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.comment.ahrilang"
+                        },
+                        "2": {
+                            "name": "storage.type.internaldeclaration.ahrilang"
+                        },
+                        "3": {
+                            "name": "punctuation.decorator.internaldeclaration.ahrilang"
+                        }
+                    },
+                    "end": "\\*/",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.ahrilang"
+                        }
+                    }
+                },
+                {
+                    "begin": "(^[ \\t]+)?((//)(?:\\s*((@)internal)(?=\\s|$))?)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.whitespace.comment.leading.ahrilang"
+                        },
+                        "2": {
+                            "name": "comment.line.double-slash.ahrilang"
+                        },
+                        "3": {
+                            "name": "punctuation.definition.comment.ahrilang"
+                        },
+                        "4": {
+                            "name": "storage.type.internaldeclaration.ahrilang"
+                        },
+                        "5": {
+                            "name": "punctuation.decorator.internaldeclaration.ahrilang"
+                        }
+                    },
+                    "end": "(?=$)",
+                    "contentName": "comment.line.double-slash.ahrilang"
+                }
+            ]
+        },
+        "strings1": {
+            "name": "string.quoted.double.ahrilang",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.ahrilang",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "strings2": {
+            "name": "string.quoted.double.ahrilang",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.ahrilang",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "strings3": {
+            "name": "string.quoted.double.ahrilang",
+            "begin": "`",
+            "end": "`",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.ahrilang",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    }
+}
