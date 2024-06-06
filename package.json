@@ -3,6 +3,10 @@
     "displayName": "Ahrilang",
     "description": "Ahrilang Support.",
     "version": "0.1.0-alpha.0",
+    "repository": {
+        "url": "https://github.com/ahriroot/ahrilang-vscode"
+    },
+    "icon": "images/logo128.png",
     "engines": {
         "vscode": "^1.89.0"
     },
@@ -14,9 +18,12 @@
             {
                 "id": "ahrilang",
                 "aliases": [
-                    "ahrilang",
-                    "ahrilang"
+                    "Ahrilang"
                 ],
+                "icon": {
+                    "light": "./images/logo-light.svg",
+                    "dark": "./images/logo-dark.svg"
+                },
                 "extensions": [
                     ".a",
                     ".al",
@@ -31,13 +38,6 @@
                 "language": "ahrilang",
                 "scopeName": "source.a",
                 "path": "./syntaxes/ahrilang.tmLanguage.json"
-            }
-        ],
-        "iconThemes": [
-            {
-                "id": "ahrilang",
-                "label": "Icons for ahrilang.",
-                "path": "./icons/ahrilang-icon.json"
             }
         ]
     }
