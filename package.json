@@ -3,6 +3,7 @@
     "displayName": "Ahrilang",
     "description": "Ahrilang Support.",
     "version": "0.1.0-alpha.0",
+    "type": "module",
     "repository": {
         "url": "https://github.com/ahriroot/ahrilang-vscode"
     },
@@ -13,6 +14,7 @@
     "categories": [
         "Programming Languages"
     ],
+    "main": "./client/out/extension.js",
     "contributes": {
         "languages": [
             {
@@ -33,6 +35,13 @@
                 "configuration": "./language-configuration.json"
             }
         ],
+        "commands": [
+            {
+                "command": "ahrilang.forceFormatDocument",
+                "title": "Format Ahrilang File",
+                "when": "editorFocus"
+            }
+        ],
         "grammars": [
             {
                 "language": "ahrilang",
@@ -40,5 +49,19 @@
                 "path": "./syntaxes/ahrilang.tmLanguage.json"
             }
         ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -b",
+        "watch": "tsc -b -w",
+        "postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+    },
+    "devDependencies": {
+        "@types/node": "^20.14.2",
+        "typescript": "^5.4.5",
+        "vscode": "^1.1.37",
+        "vscode-languageclient": "^9.0.1",
+        "vscode-languageserver": "^9.0.1",
+        "vscode-languageserver-textdocument": "^1.0.11"
     }
 }

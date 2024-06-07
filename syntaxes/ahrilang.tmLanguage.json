@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.ahrilangon",
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
     "name": "ahrilang",
     "scopeName": "source.a",
     "fileTypes": [
@@ -10,13 +10,10 @@
             "include": "#keywords"
         },
         {
-            "include": "#strings1"
+            "include": "#strings"
         },
         {
-            "include": "#strings2"
-        },
-        {
-            "include": "#strings3"
+            "include": "#number"
         },
         {
             "include": "#comment"
@@ -36,6 +33,14 @@
                 {
                     "name": "constant.language.boolean.ahrilang",
                     "match": "\\b(true|false)\\b"
+                }
+            ]
+        },
+        "number": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.ahrilang",
+                    "match": "\\b(0b[01]+(_[01]+)*|0x[0-9a-fA-F]+(_[0-9a-fA-F]+)*|\\d+(_\\d+)*(.\\d+(_\\d+)*)?([eE][+-]?\\d+(_\\d+)*)?)\\b"
                 }
             ]
         },
@@ -106,7 +111,20 @@
                 }
             ]
         },
-        "strings1": {
+        "strings": {
+            "patterns": [
+                {
+                    "include": "#strings-double"
+                },
+                {
+                    "include": "#strings-single"
+                },
+                {
+                    "include": "#strings-backtick"
+                }
+            ]
+        },
+        "strings-double": {
             "name": "string.quoted.double.ahrilang",
             "begin": "\"",
             "end": "\"",
@@ -117,7 +135,7 @@
                 }
             ]
         },
-        "strings2": {
+        "strings-single": {
             "name": "string.quoted.double.ahrilang",
             "begin": "'",
             "end": "'",
@@ -128,7 +146,7 @@
                 }
             ]
         },
-        "strings3": {
+        "strings-backtick": {
             "name": "string.quoted.double.ahrilang",
             "begin": "`",
             "end": "`",
