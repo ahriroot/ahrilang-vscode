@@ -14,7 +14,6 @@
     "categories": [
         "Programming Languages"
     ],
-    "main": "./client/out/extension.js",
     "contributes": {
         "languages": [
             {

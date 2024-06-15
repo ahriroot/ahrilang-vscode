@@ -24,7 +24,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.ahrilang",
-                    "match": "\\b(mod|pub|use|as|class|async|await|fn|return|if|else|for|while|loop|continue|break)\\b"
+                    "match": "\\b(mod|pub|use|as|class|async|await|fn|return|match|if|else|for|while|loop|continue|break)\\b"
                 },
                 {
                     "name": "support.type.builtin.ahrilang",
